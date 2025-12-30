@@ -1,3 +1,5 @@
+import type { Resource } from "../interfaces/resource.interface";
+
 export enum ResourceStatus {
   Backlog = "BACKLOG",
   InProgress = "IN PROGRESS",
@@ -6,14 +8,5 @@ export enum ResourceStatus {
 
 export type ResourceType = "book" | "video" | "article";
 
-export interface Resource {
-  id: string;
-  title: string;
-  description?: string;
-  url: string;
-  type: ResourceType;
-  status: ResourceStatus;
-  tags: string[];
-}
 
-export type ResourceUpdate = Partial<Resource> & Pick<Resource, "id">;
+export type ResourceUpdate = Partial<Resource  > & Pick<Resource, "id">;
